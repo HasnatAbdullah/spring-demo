@@ -6,6 +6,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
 @Entity
     @Table
 public class Student {
@@ -17,7 +19,7 @@ public class Student {
         )
 
         @GeneratedValue(
-                strategy = GenerationType.SEQUENCE,
+                strategy = SEQUENCE,
                 generator = "student_sequence"
         )
     private Long id;
